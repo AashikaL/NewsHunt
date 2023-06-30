@@ -1,0 +1,7 @@
+{
+  "name": "NewsHunt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
