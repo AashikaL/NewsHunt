@@ -1,0 +1,32 @@
+.news-card {
+  background-color: #dedede52;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+  
+  .news-heading {
+    margin-top: 10px;
+  }
+  
+  .news-publish {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .news-image {
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .news-content {
+    margin-top: 10px;
+  }
+  

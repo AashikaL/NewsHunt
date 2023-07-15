@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>News Hunt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="center-content">
+    <ion-card class="ion-padding">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-text style="font-weight: bold;" size="large">Lgoin</ion-text>
+          <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid">
+            <ion-item lines="full">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input
+                [ngClass]="{'is-invalid':loginForm.controls['email'].invalid && loginForm.controls['email'].touched}"
+                type="email" formControlName="email" class="form-control" placeholder="Enter your mail"
+                helperText="Enter a valid email" errorText="Invalid email" required email required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                [ngClass]="{'is-invalid':loginForm.controls['password'].invalid && loginForm.controls['password'].touched}"
+                type="password" formControlName="password" placeholder="Enter your password" class="form-control" required minlength="8"
+                required></ion-input>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-button type="submit" color="primary" style="margin-bottom: 20px;" expand="block" (click)="login()"
+                  [disabled]="loginForm.invalid">Login</ion-button>
+                <small><a [routerLink]="['/forgot-password']" class="small-text">Forgot
+                    password?</a></small>
+                <span class="divider line one-line">
+                  <p>or</p>
+                </span>
+                <ion-button class="lgoin" fill="outline" (click)="loginWithGoogle()"><ion-img class="google"
+                    src="../../assets/images (1).png"></ion-img> Login with Google</ion-button><br><br>
+                <ion-text class="ion-text-center">Don't have an account? <span style="cursor: pointer;;" routerLink="">Sign up</span></ion-text>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>

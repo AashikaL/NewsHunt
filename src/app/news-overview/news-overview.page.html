@@ -1,0 +1,62 @@
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-item>
+      <ion-icon name="home" class="ion-padding"  size="large"  routerLink="/home"></ion-icon> 
+      <ion-text style="cursor: pointer;" routerLink="/home">Home</ion-text>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-icon name="newspaper-outline" class="ion-padding"  size="large" ></ion-icon> 
+      <ion-text style="cursor: pointer;" routerLink="/news-overview">Top Stories</ion-text>
+    </ion-item> -->
+    <ion-item>
+      <ion-icon name="log-out-outline" class="ion-padding" size="large" (click)="SignOut()"></ion-icon>
+      <ion-text (click)="SignOut()" style="cursor: pointer;">Logout</ion-text>
+    </ion-item>
+    </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Top Stories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card *ngIf="news" class="news-card">
+            <ion-card-header>
+              <ion-card-title class="news-heading">{{ news.heading }}</ion-card-title>
+            </ion-card-header>
+            <ion-img  [src]="news.image" alt=""></ion-img>
+            <ion-card-content>
+              <ion-card-subtitle class="news-publish">Update: {{ news.publish }}</ion-card-subtitle>
+              <ion-card-subtitle class="news-publish">Author: {{ news.author }}</ion-card-subtitle>
+              <p class="news-content">{{ news.content }}</p>
+              <ion-img [src]="news?.imageurl"></ion-img>
+              <p class="news-content">{{ news.text }}</p>
+              <ion-img [src]="news?.url"></ion-img>
+              <p class="news-content">{{ news.text1 }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    

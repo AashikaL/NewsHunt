@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>News Hunt</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="center-content">
+    <ion-card class="ion-padding">
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-text style="font-weight: bold;" size="large">Sign up </ion-text>
+          <form [formGroup]="signupForm" (ngSubmit)="signupForm.valid">
+            <ion-item lines="full">
+              <ion-label position="floating">First name</ion-label>
+              <ion-input type="text"
+                [ngClass]="{'is-invalid':signupForm.controls['firstName'].invalid && signupForm.controls['firstName'].touched}"
+                formControlName="firstName" class="form-control" placeholder="Enter your firstName" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Last name</ion-label>
+              <ion-input type="text"
+                [ngClass]="{'is-invalid':signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched}"
+                formControlName="lastName" class="form-control" placeholder="Enter your lastName" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input
+                [ngClass]="{'is-invalid':signupForm.controls['email'].invalid && signupForm.controls['email'].touched}"
+                type="email" formControlName="email" class="form-control" placeholder="Enter your mail" required
+                email></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input name="password"
+                [ngClass]="{'is-invalid':signupForm.controls['password'].invalid && signupForm.controls['password'].touched}"
+                type="password" formControlName="password" placeholder="Enter your password" class="form-control" required minlength="8"></ion-input>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-checkbox labelPlacement="end" checked="checked"><small>I agree to the terms and
+                    conditions</small></ion-checkbox>
+                <ion-button type="submit" color="primary" expand="block" (click)="singUp()"
+                  [disabled]="signupForm.invalid">Sign Up</ion-button>
+                <span class="divider line one-line">
+                  <p>or</p>
+                </span>
+                <ion-button fill="outline" (click)="signupWithGoogle()"><ion-img class="google"
+                    src="../../assets/images (1).png"></ion-img> Login with Google</ion-button><br><br>
+                <ion-text class="ion-text-center">Have an account? <span style="cursor: pointer;" routerLink="/login">Login</span></ion-text>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>
+<!-- </ion-img> -->

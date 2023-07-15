@@ -1,0 +1,32 @@
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+divider{
+  border-top: thin;
+  position: relative;
+  margin-top: 5px;
+  padding: 40px;
+  p{
+    position: absolute;
+    background-color: white;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    left: 50%;
+  }
+}
+span{
+  color:rgb(53, 53, 247);
+  font-weight: bold;
+}
+.google{
+  width: 23px;
+  height: 23px;
+}
+.login{
+  padding: 10px;
+}

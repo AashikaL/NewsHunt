@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="items">
+    <ion-item>
+      <ion-label position="stacked">heading</ion-label>
+      <ion-input [(ngModel)]="items.heading"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">pulish</ion-label>
+      <ion-input [(ngModel)]="items.publish"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">author</ion-label>
+      <ion-input [(ngModel)]="items.author"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">content</ion-label>
+      <ion-input [(ngModel)]="items.content"></ion-input>
+    </ion-item>
+    <ion-button color="success" (click)="update()">
+      <ion-icon name="save" slot="start"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="delete()">
+      <ion-icon name="trash" slot="start"></ion-icon>
+    </ion-button>
+</ion-content>
