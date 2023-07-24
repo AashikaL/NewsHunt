@@ -9,14 +9,14 @@ import { ServicePageService } from '../firebase-service-page.service';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    FormsModule,
-  ],
-  declarations: [HomePage],
-  providers: [ServicePageService]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        FormsModule,
+        HomePage,
+    ],
+    providers: [ServicePageService]
 })
 export class HomePageModule {}

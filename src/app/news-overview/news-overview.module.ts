@@ -9,12 +9,12 @@ import { NewsOverviewPageRoutingModule } from './news-overview-routing.module';
 import { NewsOverviewPage } from './news-overview.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    NewsOverviewPageRoutingModule
-  ],
-  declarations: [NewsOverviewPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        NewsOverviewPageRoutingModule,
+        NewsOverviewPage
+    ]
 })
 export class NewsOverviewPageModule {}

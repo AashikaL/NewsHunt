@@ -1,15 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ServicePageService } from '../firebase-service-page.service';
 import { Observable, tap, interval } from 'rxjs';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, IonicModule } from '@ionic/angular';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Route, Router } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  providers: [ServicePageService]
+    selector: 'app-home',
+    templateUrl: 'home.page.html',
+    styleUrls: ['home.page.scss'],
+    providers: [ServicePageService],
+    standalone: true,
+    imports: [IonicModule, RouterLink, NgIf, NgFor]
 })
 export class HomePage implements OnInit, OnDestroy {
   skeletonItems: any[] = Array(5).fill({});

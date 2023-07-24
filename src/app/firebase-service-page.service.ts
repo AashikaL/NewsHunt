@@ -36,7 +36,7 @@ export class ServicePageService {
   // }
   async update(news: any) {
     const updateNews = doc(this.firestore, `feeds/${news.docId}`);
-    return await updateDoc(updateNews, { heading: news.heading, publish: news.publish, author: news.author, content: news.content })
+    return await updateDoc(updateNews, { heading: news.heading, publish: news.publish, author: news.author, content: news.content, image:news.image })
   }
   getOverview(news: any) {
     console.log('news id', news.docId);

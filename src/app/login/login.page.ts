@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicePageService } from '../firebase-service-page.service';
-import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { Router, RouterLink } from '@angular/router';
+import { AlertController, LoadingController, IonicModule } from '@ionic/angular';
+import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+    selector: 'app-login',
+    templateUrl: './login.page.html',
+    styleUrls: ['./login.page.scss'],
+    standalone: true,
+    imports: [
+        IonicModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgClass,
+        RouterLink,
+    ],
 })
 export class LoginPage implements OnInit {
   loginForm!: FormGroup;

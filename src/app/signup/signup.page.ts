@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { ServicePageService } from '../firebase-service-page.service';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, IonicModule } from '@ionic/angular';
+import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+    selector: 'app-signup',
+    templateUrl: './signup.page.html',
+    styleUrls: ['./signup.page.scss'],
+    standalone: true,
+    imports: [
+        IonicModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgClass,
+        RouterLink,
+    ],
 })
 export class SignupPage {
   signupForm!: FormGroup;

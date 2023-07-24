@@ -1,12 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, ToastController, IonicModule } from '@ionic/angular';
 
 import { ServicePageService } from 'src/app/firebase-service-page.service';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.page.html',
-  styleUrls: ['./modal.page.scss'],
+    selector: 'app-modal',
+    templateUrl: './modal.page.html',
+    styleUrls: ['./modal.page.scss'],
+    standalone: true,
+    imports: [
+        IonicModule,
+        NgIf,
+        FormsModule,
+    ],
 })
 export class ModalPage implements OnInit {
   @Input() id: any;

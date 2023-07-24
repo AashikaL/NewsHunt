@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, LoadingController, ModalController } from '@ionic/angular';
+import { AlertController, LoadingController, ModalController, IonicModule } from '@ionic/angular';
 import { Observable, tap } from 'rxjs';
 import { ServicePageService } from 'src/app/firebase-service-page.service';
 import { ModalPage } from '../modal/modal.page';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.page.html',
-  styleUrls: ['./admin.page.scss'],
+    selector: 'app-admin',
+    templateUrl: './admin.page.html',
+    styleUrls: ['./admin.page.scss'],
+    standalone: true,
+    imports: [IonicModule, NgFor],
 })
 export class AdminPage implements OnInit {
    items :any[] =[];

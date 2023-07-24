@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicePageService } from '../firebase-service-page.service';
-import { AlertController, LoadingController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { AlertController, LoadingController, IonicModule } from '@ionic/angular';
+import { Router, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.page.html',
-  styleUrls: ['./forgot-password.page.scss'],
+    selector: 'app-forgot-password',
+    templateUrl: './forgot-password.page.html',
+    styleUrls: ['./forgot-password.page.scss'],
+    standalone: true,
+    imports: [
+        IonicModule,
+        FormsModule,
+        RouterLink,
+    ],
 })
 export class ForgotPasswordPage implements OnInit {
  email :string='';
